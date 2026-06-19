@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+
+<title>Engagement Announcement | Arjun & Sara</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:
+linear-gradient(
+180deg,
+#faf7f3,
+#f4efe8
+);
+overflow-x:hidden;
+color:#5d5145;
+}
+
+.background-light{
+position:fixed;
+width:100%;
+height:100%;
+z-index:-2;
+
+background:
+radial-gradient(
+circle at top left,
+rgba(212,175,55,.15),
+transparent 40%
+),
+radial-gradient(
+circle at bottom right,
+rgba(255,215,170,.15),
+transparent 40%
+);
+}
+
+.spark{
+position:fixed;
+color:#d4af37;
+opacity:.2;
+animation:float 10s infinite linear;
+z-index:-1;
+}
+
+@keyframes float{
+
+0%{
+transform:
+translateY(100vh)
+rotate(0deg);
+}
+
+100%{
+transform:
+translateY(-100px)
+rotate(360deg);
+}
+
+}
+
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+padding:30px;
+}
+
+.card{
+max-width:900px;
+width:100%;
+padding:60px;
+background:rgba(255,255,255,.55);
+backdrop-filter:blur(20px);
+border-radius:35px;
+position:relative;
+overflow:hidden;
+text-align:center;
+box-shadow:0 20px 60px rgba(0,0,0,.08);
+border:1px solid rgba(255,255,255,.7);
+}
+
+.card:before{
+content:"✦";
+position:absolute;
+top:20px;
+left:30px;
+font-size:80px;
+color:rgba(212,175,55,.15);
+}
+
+.card:after{
+content:"❀";
+position:absolute;
+bottom:20px;
+right:30px;
+font-size:80px;
+color:rgba(212,175,55,.15);
+}
+
+/* ANIMASI CINCIN */
+
+.rings{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:20px;
+margin-bottom:25px;
+position:relative;
+}
+
+.ring{
+width:70px;
+height:70px;
+border:6px solid #d4af37;
+border-radius:50%;
+position:relative;
+animation:ringFloat 4s ease-in-out infinite;
+box-shadow:
+0 0 20px rgba(212,175,55,.3),
+inset 0 0 15px rgba(255,255,255,.5);
+}
+
+.ring:nth-child(2){
+margin-left:-25px;
+animation-delay:2s;
+}
+
+.ring::before{
+content:"💎";
+position:absolute;
+top:-25px;
+left:50%;
+transform:translateX(-50%);
+font-size:22px;
+animation:shine 2s infinite;
+}
+
+@keyframes ringFloat{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+}
+
+@keyframes shine{
+
+0%,100%{
+opacity:.5;
+transform:
+translateX(-50%)
+scale(1);
+}
+
+50%{
+opacity:1;
+transform:
+translateX(-50%)
+scale(1.3);
+}
+
+}
+
+.small{
+letter-spacing:7px;
+font-size:13px;
+margin-bottom:15px;
+color:#9a8570;
+}
+
+h1{
+font-family:'Cormorant Garamond';
+font-size:78px;
+font-weight:600;
+line-height:1.1;
+color:#806d5d;
+}
+
+.and{
+font-size:35px;
+margin:10px;
+}
+
+.subtitle{
+margin-top:25px;
+font-size:18px;
+line-height:1.8;
+}
+
+.date{
+margin-top:25px;
+font-size:20px;
+font-weight:500;
+}
+
+.location{
+margin-top:30px;
+padding:25px;
+border-radius:25px;
+background:rgba(255,255,255,.7);
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+}
+
+.location-title{
+font-weight:bold;
+font-size:18px;
+color:#806d5d;
+margin-bottom:10px;
+}
+
+.location-address{
+font-size:14px;
+line-height:1.8;
+margin-bottom:15px;
+color:#7a6b5d;
+}
+
+.location iframe{
+width:100%;
+height:300px;
+border:none;
+border-radius:20px;
+}
+
+.maps-button{
+display:inline-block;
+margin-top:15px;
+padding:12px 25px;
+border-radius:30px;
+text-decoration:none;
+background:
+linear-gradient(
+90deg,
+#d4af37,
+#c89b2d
+);
+color:white;
+transition:.4s;
+}
+
+.maps-button:hover{
+transform:translateY(-4px);
+}
+
+.countdown{
+display:flex;
+justify-content:center;
+gap:15px;
+margin-top:40px;
+flex-wrap:wrap;
+}
+
+.box{
+background:white;
+padding:20px;
+width:90px;
+border-radius:20px;
+box-shadow:0 8px 20px rgba(0,0,0,.05);
+transition:.5s;
+}
+
+.box:hover{
+transform:translateY(-6px);
+}
+
+.box span{
+display:block;
+font-size:28px;
+font-weight:bold;
+color:#806d5d;
+}
+
+.line{
+margin:35px auto;
+width:180px;
+height:1px;
+
+background:
+linear-gradient(
+to right,
+transparent,
+#d4af37,
+transparent
+);
+}
+
+.fade{
+opacity:0;
+transform:translateY(50px);
+transition:1.5s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@media(max-width:768px){
+
+.card{
+padding:30px;
+}
+
+h1{
+font-size:45px;
+}
+
+.location iframe{
+height:220px;
+}
+
+.ring{
+width:55px;
+height:55px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="background-light"></div>
+
+<section>
+
+<div class="card fade">
+
+<div class="rings">
+<div class="ring"></div>
+<div class="ring"></div>
+</div>
+
+<div class="small">
+ENGAGEMENT ANNOUNCEMENT
+</div>
+
+<h1>
+Arjun Mahendra
+</h1>
+
+<div class="and">
+&
+</div>
+
+<h1>
+Sara Putri Al Cindy
+</h1>
+
+<div class="line"></div>
+
+<div class="subtitle">
+Dengan penuh rasa syukur dan kebahagiaan,<br>
+kami mengumumkan acara lamaran kami.
+</div>
+
+<div class="date">
+9 Agustus 2026
+</div>
+
+<div class="location">
+
+<div class="location-title">
+📍 Lokasi Acara
+</div>
+
+<div class="location-address">
+Gg. Salam 4, Tj. Baru,<br>
+Kec. Kedamaian, Kota Bandar Lampung,<br>
+Lampung 35122
+</div>
+
+<iframe src="https://maps.google.com/maps?q=-5.4066358,105.2804415&z=17&output=embed"></iframe>
+
+<a href="https://www.google.com/maps/place/Gg.+Salam+4" target="_blank" class="maps-button">
+Buka Google Maps
+</a>
+
+</div>
+
+<div class="countdown">
+
+<div class="box">
+<span id="d">0</span>
+Hari
+</div>
+
+<div class="box">
+<span id="h">0</span>
+Jam
+</div>
+
+<div class="box">
+<span id="m">0</span>
+Menit
+</div>
+
+<div class="box">
+<span id="s">0</span>
+Detik
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<script>
+
+const observer=
+new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show")
+
+}
+
+})
+
+})
+
+document.querySelectorAll(".fade")
+.forEach(el=>observer.observe(el))
+
+let target=
+new Date("August 9, 2026 10:00:00")
+
+setInterval(()=>{
+
+let now=new Date()
+let gap=target-now
+
+d.innerHTML=Math.floor(gap/1000/60/60/24)
+h.innerHTML=Math.floor(gap/1000/60/60)%24
+m.innerHTML=Math.floor(gap/1000/60)%60
+s.innerHTML=Math.floor(gap/1000)%60
+
+},1000)
+
+for(let i=0;i<25;i++){
+
+let x=document.createElement("div")
+
+x.innerHTML="✦"
+
+x.className="spark"
+
+x.style.left=Math.random()*100+"%"
+x.style.fontSize=(Math.random()*15+10)+"px"
+x.style.animationDuration=(Math.random()*10+8)+"s"
+x.style.animationDelay=Math.random()*5+"s"
+
+document.body.appendChild(x)
+
+}
+
+</script>
+
+</body>
+</html>
+```
